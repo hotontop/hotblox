@@ -1,14 +1,16 @@
-paint ("                                                   ")
-paint (" _    _       _    _____ _                         ")
-paint ("| |  | |     | |  / ____| |                        ")
-paint ("| |__| | ___ | |_| |    | |__   __ _ _ __ ___  ___ ")
-paint ("|  __  |/ _ \| __| |    | '_ \ / _` | '_ ` _ \/ __|")
-paint ("| |  | | (_) | |_| |____| | | | (_| | | | | | \__ \")
-paint ("|_|  |_|\___/ \__|\_____|_| |_|\__,_|_| |_| |_|___/")
-paint ("                                                   ")
+// paint ("                                                   ")
+// paint (" _    _       _    _____ _                         ")
+// paint ("| |  | |     | |  / ____| |                        ")
+// paint ("| |__| | ___ | |_| |    | |__   __ _ _ __ ___  ___ ")
+// paint ("|  __  |/ _ \| __| |    | '_ \ / _` | '_ ` _ \/ __|")
+// paint ("| |  | | (_) | |_| |____| | | | (_| | | | | | \__ \")
+// paint ("|_|  |_|\___/ \__|\_____|_| |_|\__,_|_| |_| |_|___/")
+// paint ("                                                   ")
 
 
-  local client = game.Players.LocalPlayer
+
+  
+local client = game.Players.LocalPlayer
 local players = game:GetService("Players")
 local rs = game:GetService("RunService")
 
@@ -46,8 +48,8 @@ local function chams(character)
    cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop  
    cham.OutlineColor = Color3.fromRGB(0,0,0)
    cham.FillColor = Color3.fromRGB(40,119,208)
-   cham.FillTransparency = 0.4
-   cham.OutlineTransparency = 0.1
+   cham.FillTransparency = 0.1
+   cham.OutlineTransparency = 0.2
    local new = cham:Clone()
    new.Parent = character
    new.FillColor = Color3.fromRGB(176,221,22)
@@ -75,3 +77,6 @@ players.PlayerAdded:connect(function()
    end
    v.CharacterAdded:connect(function()wait(0.1)chams(v.Character)end)
 end)
+
+
+
