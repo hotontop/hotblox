@@ -35,14 +35,14 @@ To get started with HotChams, follow these steps:
 
 To use HotChams, you can execute the following Lua loadstring directly in your executor
 
-1. ** ChatGPT HotChams **
+1. ** HotChams **
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/chatgpthotchams.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/hotchams.lua"))()
 ```
 
-2. ** WormGPT HotChams **
+2. ** HotAimbot **
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/wormgpthotchams.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/aimbot/hotaimbot.lua"))()
 ```
 
 2. **Installation:**
