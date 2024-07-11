@@ -30,7 +30,8 @@ To get started with HotChams, follow these steps:
 
 1. **Download:**
 - Choose your preferred HotChams option:
-## Loadstring
+
+ ** Loadstring **
 
 To use HotChams, you can execute the following Lua loadstring directly in your executor
 
