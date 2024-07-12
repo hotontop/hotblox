@@ -40,9 +40,9 @@ To use HotChams, you can execute the following Lua loadstring directly in your e
 loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/hotchams.lua"))()
 ```
 
-2. ** HotAimbot **
+2. ** BelugaWare (KAT) & TrashTalker **
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/aimbot/hotaimbot.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/trashbeluga.lua"))()
 ```
 
 2. **Installation:**
