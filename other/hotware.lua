@@ -1536,7 +1536,7 @@ local words = {
     "luck boosted",
     "no chance to win",
     "humiliated dog",
-    "haha, demolished by kayra",
+    "haha, demolished by hot",
     "delete roblox ur so bad, haha",
 
 }
