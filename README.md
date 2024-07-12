@@ -76,5 +76,9 @@ Join our Discord community to connect with other users, get support, and stay up
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+## Logs
+**website edited** 12.07.2024
+**style.css edited more clean and modern** 12.07.2024
 
+---
 © 2024 HotChams. All rights reserved.
