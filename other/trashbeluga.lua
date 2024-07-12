@@ -1492,3 +1492,61 @@ end)
 local Tab = Window:NewTab("Credits")
 
 local Section = Tab:NewSection("Creator : hot ft. hotblox")
+
+// trash talker
+
+local words = {
+    "where are you aiming at?",
+    "sonned",
+    "bad",
+    "even my grandma has faster reactions",
+    ":clown:",
+    "gg = get good",
+    "im just better",
+    "my gaming chair is just better",
+    "clip me",
+    "skill",
+    ":Skull:",
+    "go play adopt me",
+    "go play brookhaven",
+    "omg you are so good :screm:",
+    "awesome",
+    "you built like gru",
+    "fridge",
+    "do not bully pliisss :sobv:",
+    "it was your lag ofc",
+    "fly high",
+    "*cough* *cough*",
+    "son",
+    "already mad?",
+    "please don't report :sobv:",
+    "sob harder",
+    "sopt be neamn to me :sob :sob: sov:",
+    "a kid playing better than u",
+    "1 sit nn dog",
+    "train about your aim",
+    "cry about it",
+    "skill issue",
+    "ur low iq",
+    "ez 1 sit nn dog",
+    "baimmed ez 1 sit nn dog"
+    "why ur so ez? haha"
+    "haha ur so bad",
+    "my bullet even faster than ur reflex",
+    "luck boosted",
+    "no chance to win",
+    "humiliated dog",
+    "haha, demolished by kayra",
+    "delete roblox ur so bad, haha",
+
+}
+
+local event = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+local player = game.Players.LocalPlayer
+local keybind = "f" -- change hotkey here
+
+ player:GetMouse().KeyDown:connect(function(key)
+        if key == keybind then
+            event:FireServer(words[math.random(1,#words)], "All")
+        end
+    end)
