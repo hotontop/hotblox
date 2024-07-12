@@ -35,14 +35,19 @@ To get started with HotChams, follow these steps:
 
 To use HotChams, you can execute the following Lua loadstring directly in your executor
 
-1. ** HotChams **
+1. **HotChams**
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/hotchams.lua"))()
 ```
 
-2. ** BelugaWare (KAT) & TrashTalker **
+2. **HotWare (KAT) & TrashTalker**
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/trashbeluga.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/hotware.lua"))()
+```
+
+3. **HotAdmin**
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/hotadmin.lua"))()
 ```
 
 2. **Installation:**
