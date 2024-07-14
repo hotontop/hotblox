@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/hotchams.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hotontop/hotblox/main/esp/hotchams.lua"))()
