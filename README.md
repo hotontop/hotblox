@@ -77,9 +77,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 ## Logs
-1. **website edited** 12.07.2024
+1. **website edited** 
 
-2. **style.css edited more clean and modern** 12.07.2024
+2. **style.css edited more clean and modern** 
+   
+3. **index.html and styles.css edited new scripts admin script aimbot**
 
+4. **feedback added**
+   
 ---
 © 2024 HotChams. All rights reserved.
