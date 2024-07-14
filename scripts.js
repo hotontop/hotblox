@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     setTimeout(function() {
                         alertBox.classList.add('hidden');
                     }, 3000); // Hide alert box after 3 seconds
-                }, 20000); // Wait for 20 seconds before showing alert
+                }, 500); // Wait for 20 seconds before showing alert
             } else {
                 alert('Feedback gönderilirken bir hata oluştu.');
             }
