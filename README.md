@@ -37,17 +37,17 @@ To use HotChams, you can execute the following Lua loadstring directly in your e
 
 1. **HotChams**
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/esp/hotchams.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hotontop/hotblox/main/esp/hotchams.lua"))()
 ```
 
 2. **HotWare (KAT) & TrashTalker**
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/hotware.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hotontop/hotblox/main/other/hotware.lua"))()
 ```
 
 3. **HotAdmin**
 ```
-loadstring(game:HttpGet("https://raw.githubusercontent.com/retardcoder/hotbloxai/main/other/hotadmin.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hotontop/hotblox/main/other/hotadmin.lua"))()
 ```
 
 2. **Installation:**
