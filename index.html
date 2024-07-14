@@ -25,34 +25,33 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h2>Enhance Your Roblox Gameplay with HotBlox</h2>
-            <p>Download AI-powered HotChams to customize and improve your visual experience in Roblox.</p>
+            <h2>Welcome to HotBlox</h2>
+            <p>Download the latest scripts and enhance your Roblox gameplay experience!</p>
             <a href="#downloads" class="btn">Download Now</a>
         </div>
     </section>
 
     <section id="downloads">
         <div class="container">
-            <h2>Downloads</h2>
-            <p>Choose your preferred HotChams option:</p>
+            <h2>Available Downloads</h2>
             <ul class="downloads-list">
-                <li><a href="https://raw.githubusercontent.com/retardcoder/hotbloxai/main/loadstring/hotchams.lua">HotChams</a></li>
-                <li><a href="https://raw.githubusercontent.com/retardcoder/hotbloxai/main/loadstring/hotware.lua">HotWare (TrashTalker KeyBind "F")</a></li>
-                <li><a href="https://raw.githubusercontent.com/retardcoder/hotbloxai/main/loadstring/hotadmin.lua">HotAdmin (Infinite Yeild Paste)</a></li>
+                <li><a href="download/hotblox_v1.0.zip">HotBlox v1.0</a></li>
+                <li><a href="download/hotblox_v1.1.zip">HotBlox v1.1</a></li>
+                <li><a href="download/hotblox_v1.2.zip">HotBlox v1.2</a></li>
             </ul>
         </div>
     </section>
 
     <section id="esp-chams">
         <div class="container">
-            <h2>ESP & Chams</h2>
+            <h2>Admin & Chams & KAT</h2>
             <div class="feature">
                 <h3>ESP (Extra Sensory Perception)</h3>
-                <p>Gain a competitive edge with ESP features that provide:</p>
+                <p>Enhance your awareness with ESP features:</p>
                 <ul>
-                    <li>Entity detection through obstacles</li>
-                    <li>Visual cues like player outlines and name tags</li>
-                    <li>Enhanced situational awareness</li>
+                    <li>Wallhacks to see through walls</li>
+                    <li>Player and item outlines</li>
+                    <li>Distance and health awareness</li>
                 </ul>
             </div>
             <div class="feature">
@@ -62,6 +61,33 @@
                     <li>Colored overlays for game models</li>
                     <li>Personalization options for visibility</li>
                     <li>Improved optimization, Spot Enemies Faster</li>
+                </ul>
+            </div>
+            <div class="feature">
+                <h3>Aimbot</h3>
+                <p>Improve your accuracy with our advanced Aimbot script:</p>
+                <ul>
+                    <li>Automatic target locking</li>
+                    <li>Customizable aiming settings</li>
+                    <li>Smooth and human-like movements</li>
+                </ul>
+            </div>
+            <div class="feature">
+                <h3>TrashTalk Script</h3>
+                <p>Have fun with our TrashTalk script that provides:</p>
+                <ul>
+                    <li>Automated taunts and messages</li>
+                    <li>Customizable keybindings</li>
+                    <li>Predefined and custom phrases</li>
+                </ul>
+            </div>
+            <div class="feature">
+                <h3>Admin Script</h3>
+                <p>Manage your game environment with our powerful Admin script:</p>
+                <ul>
+                    <li>Control over player actions and game settings</li>
+                    <li>Scripting commands for server management</li>
+                    <li>Enhanced moderation and user control features</li>
                 </ul>
             </div>
         </div>
@@ -123,5 +149,74 @@
         </div>
     </footer>
 
+    <div id="chat">
+        <h2>Feedback</h2>
+        <form id="feedback-form">
+            <textarea id="feedback" placeholder="Your feedback..."></textarea>
+            <button type="submit" id="feedback-button">Send</button>
+        </form>
+    </div>
+
+    <div id="alert-box" class="alert-box hidden">
+        <p id="alert-message"></p>
+    </div>
+
+    <script>
+        let cooldown = false;
+
+        function showAlert(message) {
+            const alertBox = document.getElementById('alert-box');
+            const alertMessage = document.getElementById('alert-message');
+            alertMessage.textContent = message;
+            alertBox.classList.remove('hidden');
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        }
+
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var feedback = document.getElementById('feedback').value;
+
+            if (cooldown) {
+                showAlert('Please wait 20 seconds before sending another feedback.');
+                return;
+            }
+
+            fetch('https://discord.com/api/webhooks/1261891121739730955/yOQ_djvOpQ4My3BK9flfJtB_sp6j7ov2QXDzWMKAzrtKuynS-DE2bbFVx45tKS7HzbsG', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: 'BloxHook Bot',
+                    avatar_url: 'https://media.discordapp.net/attachments/1261890598705823786/1261890727273566280/Screenshot_20240714-061317.jpg?ex=66949ad2&is=66934952&hm=c4d29200de147e1b04dc8e4ce97e7eceecff60de593c6b6d7bf9c85b15b0dd0e&=&width=811&height=4096', // Your avatar URL
+                    embeds: [{
+                        title: 'New Feedback Received',
+                        description: feedback,
+                        color: 7506394 // Light blue color
+                    }]
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                showAlert('Feedback sent successfully!');
+                document.getElementById('feedback').value = '';
+                cooldown = true;
+                setTimeout(() => {
+                    cooldown = false;
+                }, 20000); // 20 seconds cooldown
+            })
+            .catch((error) => {
+                showAlert('Error sending feedback.');
+                console.error('Error:', error);
+            });
+        });
+
+        // Toggle dark mode
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+        };
+    </script>
 </body>
 </html>
