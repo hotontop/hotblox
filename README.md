@@ -1,6 +1,6 @@
-# HotChams
+# HotBlox
 
-Enhance Your Roblox Gameplay with HotChams, an AI-powered customization tool for visual enhancements.
+Enhance Your Roblox Gameplay with HotBlox, an AI-powered customization tool for visual enhancements and aiming.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
