@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const feedbackForm = document.getElementById('feedback');
+    const feedbackForm = document.getElementById('feedback-form');
     const feedbackButton = document.getElementById('feedback-button');
     const alertBox = document.getElementById('alert-box');
+    const themeToggle = document.getElementById('theme-toggle');
+    let lastFeedbackTime = 0;
 
     feedbackForm.addEventListener('submit', function(event) {
         event.preventDefault();
@@ -15,8 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        // Check if 20 seconds have passed since the last feedback
+        const currentTime = Date.now();
+        if (currentTime - lastFeedbackTime < 20000) {
+            alert('Lütfen 20 saniye bekleyin.');
+            return;
+        }
+
         // Webhook URL
-        const webhookUrl = 'https://discord.com/api/webhooks/1261891121739730955/yOQ_djvOpQ4My3BK9flfJtB_sp6j7ov2QXDzWMKAzrtKuynS-DE2bbFVx45tKS7HzbsG';
+        const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
 
         // Webhook payload
         const payload = {
@@ -24,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
             embeds: [
                 {
                     title: "Yeni Feedback",
-                    color: 3447003, // Blue color
+                    color: 15158332, // Red color
                     fields: [
                         {
                             name: "E-posta",
@@ -54,20 +63,24 @@ document.addEventListener("DOMContentLoaded", function() {
             body: JSON.stringify(payload)
         }).then(response => {
             if (response.ok) {
-                // Show alert box after 20 seconds
+                // Update the last feedback time
+                lastFeedbackTime = Date.now();
+
+                // Show alert box
+                alertBox.classList.remove('hidden');
+                feedbackForm.reset();
                 setTimeout(function() {
-                    alertBox.classList.remove('hidden');
-                    feedbackForm.reset();
-                    setTimeout(function() {
-                        alertBox.classList.add('hidden');
-                    }, 3000); // Hide alert box after 3 seconds
-                }, 500); // Wait for 20 seconds before showing alert
+                    alertBox.classList.add('hidden');
+                }, 3000); // Hide alert box after 3 seconds
             } else {
-                alert('Feedback gönderilirken bir hata oluştu.');
+                alert('Feedback gönderilemedi.');
             }
         }).catch(error => {
-            alert('Feedback gönderilirken bir hata oluştu.');
-            console.error('Error:', error);
+            alert('Feedback gönderilemedi.');
         });
+    });
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('light-theme');
     });
 });
