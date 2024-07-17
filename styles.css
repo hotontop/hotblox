@@ -1,15 +1,17 @@
-/* Reset and General Styles */
+/* General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #111;
+    color: #f2f2f2;
     line-height: 1.6;
-    background: #f2f2f2; /* Light gray background */
-    color: #333; /* Dark gray text color */
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
 }
 
 .container {
@@ -19,20 +21,20 @@ body {
 }
 
 a {
-    color: #007bff; /* Blue link color */
+    color: #ff4500;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #0056b3; /* Darker blue on hover */
+    color: #ff6347;
 }
 
 /* Header Styles */
 header {
-    background-color: #007bff; /* Blue header background */
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #333;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 header .container {
@@ -42,247 +44,296 @@ header .container {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif; /* Heading font */
     font-size: 2.5em;
-    color: #fff; /* White text color */
-    margin: 0;
+    color: #ff4500;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
 }
 
 header nav ul li {
-    font-size: 1.2em;
+    margin-right: 20px;
 }
 
 header nav ul li a {
-    color: #fff; /* White nav links */
-    text-transform: uppercase; /* Uppercase text for nav links */
-    padding: 5px 10px;
-    border-radius: 3px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth background transition */
+    color: #f2f2f2;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
-header nav ul li a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Hero Section */
+/* Hero Section Styles */
 .hero {
-    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('hero-image.jpg') center/cover no-repeat; /* Hero background with gradient overlay */
-    color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 0;
+    background-image: url('https://your-image-link-here.jpg'); /* Add a fire-themed image URL */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h2 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.5em;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
-.hero .btn {
-    background-color: #28a745; /* Green button */
+.btn {
+    display: inline-block;
+    background-color: #ff4500;
     color: #fff;
-    padding: 15px 30px;
     font-size: 1.2em;
-    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
+    text-transform: uppercase;
     transition: background-color 0.3s;
 }
 
-.hero .btn:hover {
-    background-color: #218838; /* Darker green on hover */
+.btn:hover {
+    background-color: #ff6347;
 }
 
 /* Section Styles */
 section {
-    padding: 60px 20px;
+    padding: 80px 0;
+    background-color: #222;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 section h2 {
     font-size: 2.5em;
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 40px;
-    color: #007bff; /* Blue section headings */
+    color: #ff4500;
 }
 
-section p, section ul {
+section p {
     font-size: 1.2em;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-section ul {
-    list-style-type: disc;
-    padding-left: 20px;
+ul.downloads-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
 }
 
-section ul li {
+ul.downloads-list li {
     margin-bottom: 10px;
 }
 
-/* Downloads Section */
-.downloads-list {
-    list-style-type: none;
-    text-align: center;
-}
-
-.downloads-list li {
-    margin-bottom: 15px;
-}
-
-.downloads-list li a {
-    display: inline-block;
-    background-color: #28a745; /* Green link background */
+ul.downloads-list li a {
+    background-color: #ff4500;
     color: #fff;
     padding: 10px 20px;
-    font-size: 1.2em;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.downloads-list li a:hover {
-    background-color: #218838; /* Darker green on hover */
+ul.downloads-list li a:hover {
+    background-color: #ff6347;
 }
 
-/* Features Section */
 .feature {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .feature h3 {
     font-size: 2em;
-    color: #333; /* Dark gray feature headings */
+    margin-bottom: 10px;
+    color: #ff4500;
+}
+
+.feature p {
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
 .feature ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-/* Discord Section */
-.btn-discord {
-    display: inline-block;
-    background-color: #7289da; /* Discord blue background */
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border-radius: 5px;
+    list-style-type: none;
+    padding: 0;
     text-align: center;
-    transition: background-color 0.3s;
 }
 
-.btn-discord:hover {
-    background-color: #5b6eae; /* Darker blue on hover */
-}
-
-/* Security Section */
-#security ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-/* Feedback Section */
-#chat {
-    background: #f9f9f9;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#feedback {
-    width: 100%;
-    padding: 10px;
+.feature ul li {
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
 }
 
-#email, #discord-name {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Footer Styles */
+footer {
+    background-color: #333;
+    padding: 20px 0;
+    text-align: center;
+    color: #f2f2f2;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#feedback-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+footer p {
+    margin: 0;
 }
 
-#feedback-button:hover {
-    background-color: #0056b3;
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* Alert Box */
+footer nav ul li {
+    margin-right: 20px;
+}
+
+footer nav ul li a {
+    color: #f2f2f2;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Alert Box Styles */
 .alert-box {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 123, 255, 0.8);
+    background-color: #333;
     color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
     z-index: 1000;
-    display: none;
 }
 
-.alert-box p {
-    margin: 0;
-    font-size: 1.2em;
-    text-align: center;
+.alert-box.show {
+    display: block;
 }
 
-.hidden {
-    display: none;
+/* Feedback Form Styles */
+.feedback-form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #333; /* Dark gray footer background */
-    color: #fff; /* White text color */
-    padding: 20px 0;
-    text-align: center;
+.feedback-form h2 {
+    color: #ff4500;
+    margin-bottom: 10px;
 }
 
-footer nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+.feedback-form label {
+    display: block;
+    color: #f2f2f2;
+    margin-bottom: 5px;
 }
 
-footer nav ul li {
-    font-size: 1.2em;
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
-footer nav ul li a {
-    color: #fff; /* White footer links */
-    transition: color 0.3s;
+.feedback-form button {
+    background-color: #ff4500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-footer nav ul li a:hover {
-    color: #007bff; /* Blue on hover */
+.feedback-form button:hover {
+    background-color: #ff6347;
+}
+
+/* Light Theme Styles */
+.light-theme {
+    background-color: #f2f2f2;
+    color: #111;
+}
+
+.light-theme header {
+    background-color: #ff4500;
+}
+
+.light-theme header h1 {
+    color: #fff;
+}
+
+.light-theme header nav ul li a {
+    color: #fff;
+}
+
+.light-theme .hero {
+    background-image: url('https://images.hdqwalls.com/download/windows-11-material-style-light-8k-d4-1600x900.jpg');
+}
+
+.light-theme section {
+    background-color: #fff;
+}
+
+.light-theme section h2 {
+    color: #ff4500;
+}
+
+.light-theme footer {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+.light-theme .feedback-form {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.light-theme .feedback-form h2 {
+    color: #ff4500;
+}
+
+.light-theme .feedback-form label {
+    color: #111;
+}
+
+.light-theme .feedback-form input,
+.light-theme .feedback-form textarea {
+    background-color: #f2f2f2;
+    color: #111;
+}
+
+.light-theme .feedback-form button {
+    background-color: #111;
+    color: #fff;
+}
+
+.light-theme .feedback-form button:hover {
+    background-color: #333;
 }
