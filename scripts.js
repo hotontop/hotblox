@@ -22,10 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentTime - lastFeedbackTime < 20000) {
             alert('Lütfen 20 saniye bekleyin.');
             return;
+
+
+        if (!feedbackText || !email || !discordName) {
+            alert('Lütfen tüm alanları doldurun.');
+            return;
         }
 
         // Webhook URL
-        const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+        const webhookUrl = 'https://discord.com/api/webhooks/1261891121739730955/yOQ_djvOpQ4My3BK9flfJtB_sp6j7ov2QXDzWMKAzrtKuynS-DE2bbFVx45tKS7HzbsG';
 
         // Webhook payload
         const payload = {
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
             embeds: [
                 {
                     title: "Yeni Feedback",
-                    color: 15158332, // Red color
+                    color: 3447003, // Blue color
                     fields: [
                         {
                             name: "E-posta",
@@ -63,20 +68,20 @@ document.addEventListener("DOMContentLoaded", function() {
             body: JSON.stringify(payload)
         }).then(response => {
             if (response.ok) {
-                // Update the last feedback time
-                lastFeedbackTime = Date.now();
-
-                // Show alert box
-                alertBox.classList.remove('hidden');
-                feedbackForm.reset();
+                // Show alert box after 20 seconds
                 setTimeout(function() {
-                    alertBox.classList.add('hidden');
-                }, 3000); // Hide alert box after 3 seconds
+                    alertBox.classList.remove('hidden');
+                    feedbackForm.reset();
+                    setTimeout(function() {
+                        alertBox.classList.add('hidden');
+                    }, 7000); // Hide alert box after 3 seconds
+                }, 1000); // Wait for 20 seconds before showing alert
             } else {
-                alert('Feedback gönderilemedi.');
+                alert('Feedback gönderilirken bir hata oluştu.');
             }
         }).catch(error => {
-            alert('Feedback gönderilemedi.');
+            alert('Feedback gönderilirken bir hata oluştu.');
+            console.error('Error:', error);
         });
     });
 
