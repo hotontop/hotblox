@@ -3,15 +3,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #111;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1e1e1e;
     color: #f2f2f2;
     line-height: 1.6;
-    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/7381.png');
 }
 
 .container {
@@ -21,20 +20,24 @@ body {
 }
 
 a {
-    color: #ff4500;
+    color: #ff6347;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #ff6347;
+    color: #ff4500;
 }
 
 /* Header Styles */
 header {
-    background-color: #333;
+    background-color: #282828;
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -45,12 +48,14 @@ header .container {
 
 header h1 {
     font-size: 2.5em;
-    color: #ff4500;
+    color: #ff6347;
+    transition: color 0.3s;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
+    align-items: center;
 }
 
 header nav ul li {
@@ -62,31 +67,39 @@ header nav ul li a {
     font-size: 1.2em;
     text-transform: uppercase;
     font-weight: bold;
+    transition: transform 0.3s;
+}
+
+header nav ul li a:hover {
+    transform: scale(1.1);
 }
 
 header #theme-toggle {
-    background-color: #ff4500;
+    background-color: #ff6347;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 header #theme-toggle:hover {
-    background-color: #ff6347;
+    background-color: #ff4500;
+    transform: scale(1.1);
 }
 
 /* Hero Section Styles */
 .hero {
     text-align: center;
-    padding: 100px 0;
-    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9708.jpg'); /* Add a fire-themed image URL */
+    padding: 150px 0;
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9708.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
     position: relative;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .hero::after {
@@ -107,48 +120,61 @@ header #theme-toggle:hover {
 .hero h2 {
     font-size: 3em;
     margin-bottom: 20px;
+    animation: slideInDown 1s ease-in-out;
 }
 
 .hero p {
     font-size: 1.5em;
     margin-bottom: 30px;
+    animation: slideInUp 1s ease-in-out;
 }
 
 .hero .btn {
-    background-color: #ff4500;
+    background-color: #ff6347;
     color: #fff;
     border: none;
     padding: 15px 30px;
     border-radius: 5px;
     font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: bounceIn 1.5s ease-in-out;
 }
 
 .hero .btn:hover {
-    background-color: #ff6347;
+    background-color: #ff4500;
+    transform: scale(1.1);
 }
 
 /* Section Styles */
 section {
     padding: 60px 0;
+    background-color: #2c2c2c;
+    color: #f2f2f2;
+}
+
+section:nth-of-type(even) {
+    background-color: #1e1e1e;
 }
 
 section h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     text-align: center;
-    color: #ff4500;
+    color: #ff6347;
+    animation: fadeIn 1s ease-in-out;
 }
 
 section p {
     font-size: 1.2em;
     margin-bottom: 20px;
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 section .feature {
     margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 section .feature h3 {
@@ -178,7 +204,7 @@ section .feature p {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #ff4500;
+    color: #ff6347;
 }
 
 #feedback-form input, #feedback-form textarea {
@@ -187,6 +213,11 @@ section .feature p {
     border: 1px solid #333;
     border-radius: 5px;
     font-size: 1em;
+    transition: transform 0.3s;
+}
+
+#feedback-form input:focus, #feedback-form textarea:focus {
+    transform: scale(1.02);
 }
 
 #feedback-form textarea {
@@ -194,17 +225,19 @@ section .feature p {
 }
 
 #feedback-form .btn {
-    background-color: #ff4500;
+    background-color: #ff6347;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #feedback-form .btn:hover {
-    background-color: #ff6347;
+    background-color: #ff4500;
+    transform: scale(1.1);
 }
 
 /* Alert Box Styles */
@@ -215,17 +248,48 @@ section .feature p {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    animation: slideInDown 0.5s ease-in-out;
 }
 
 .hidden {
     display: none;
 }
 
+/* Footer Styles */
+footer {
+    background-color: #282828;
+    padding: 20px 0;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+footer nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer nav ul li {
+    margin-right: 20px;
+}
+
+footer nav ul li a {
+    color: #f2f2f2;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer nav ul li a:hover {
+    color: #ff6347;
+}
+
 /* Light Theme */
 body.light-theme {
     background-color: #f2f2f2;
     color: #111;
-    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9708.jpg');
 }
 
 body.light-theme header {
@@ -238,16 +302,16 @@ body.light-theme header nav ul li a {
 }
 
 body.light-theme header h1 {
-    color: #ff4500;
+    color: #ff6347;
 }
 
 body.light-theme .btn {
-    background-color: #ff4500;
+    background-color: #ff6347;
     color: #fff;
 }
 
 body.light-theme .btn:hover {
-    background-color: #ff6347;
+    background-color: #ff4500;
 }
 
 body.light-theme section {
@@ -262,4 +326,29 @@ body.light-theme footer {
 
 body.light-theme footer nav ul li a {
     color: #111;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
