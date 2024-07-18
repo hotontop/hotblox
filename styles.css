@@ -64,6 +64,20 @@ header nav ul li a {
     font-weight: bold;
 }
 
+header #theme-toggle {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+header #theme-toggle:hover {
+    background-color: #ff6347;
+}
+
 /* Hero Section Styles */
 .hero {
     text-align: center;
@@ -91,40 +105,38 @@ header nav ul li a {
 }
 
 .hero h2 {
-    font-size: 3.5em;
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.btn {
-    display: inline-block;
+.hero .btn {
     background-color: #ff4500;
     color: #fff;
-    font-size: 1.2em;
-    padding: 10px 20px;
+    border: none;
+    padding: 15px 30px;
     border-radius: 5px;
-    text-transform: uppercase;
+    font-size: 1.2em;
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.btn:hover {
+.hero .btn:hover {
     background-color: #ff6347;
 }
 
 /* Section Styles */
 section {
-    padding: 80px 0;
-    background-color: #222;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 60px 0;
 }
 
 section h2 {
     font-size: 2.5em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
     color: #ff4500;
 }
@@ -135,205 +147,119 @@ section p {
     text-align: center;
 }
 
-ul.downloads-list {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
+section .feature {
+    margin-bottom: 40px;
 }
 
-ul.downloads-list li {
+section .feature h3 {
+    font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-ul.downloads-list li a {
-    background-color: #ff4500;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-ul.downloads-list li a:hover {
-    background-color: #ff6347;
-}
-
-.feature {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.feature h3 {
-    font-size: 2em;
+section .feature p {
+    font-size: 1em;
     margin-bottom: 10px;
+}
+
+/* Feedback Section Styles */
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#feedback-form div {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+#feedback-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
     color: #ff4500;
 }
 
-.feature p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+#feedback-form input, #feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
-.feature ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
+#feedback-form textarea {
+    height: 150px;
 }
 
-.feature ul li {
-    margin-bottom: 10px;
+#feedback-form .btn {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    padding: 20px 0;
-    text-align: center;
-    color: #f2f2f2;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-}
-
-footer p {
-    margin: 0;
-}
-
-footer nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-footer nav ul li {
-    margin-right: 20px;
-}
-
-footer nav ul li a {
-    color: #f2f2f2;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    font-weight: bold;
+#feedback-form .btn:hover {
+    background-color: #ff6347;
 }
 
 /* Alert Box Styles */
 .alert-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #333;
-    color: #fff;
+    color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    display: none;
     z-index: 1000;
 }
 
-.alert-box.show {
-    display: block;
+.hidden {
+    display: none;
 }
 
-/* Feedback Form Styles */
-.feedback-form {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+/* Light Theme */
+body.light-theme {
+    background-color: #f2f2f2;
+    color: #111;
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/9708.jpg');
 }
 
-.feedback-form h2 {
+body.light-theme header {
+    background-color: #fff;
+    color: #111;
+}
+
+body.light-theme header nav ul li a {
+    color: #111;
+}
+
+body.light-theme header h1 {
     color: #ff4500;
-    margin-bottom: 10px;
 }
 
-.feedback-form label {
-    display: block;
-    color: #f2f2f2;
-    margin-bottom: 5px;
-}
-
-.feedback-form input,
-.feedback-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-.feedback-form button {
+body.light-theme .btn {
     background-color: #ff4500;
     color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.feedback-form button:hover {
+body.light-theme .btn:hover {
     background-color: #ff6347;
 }
 
-/* Light Theme Styles */
-.light-theme {
-    background-color: #f2f2f2;
-    color: #111;
-}
-
-.light-theme header {
-    background-color: #ff4500;
-}
-
-.light-theme header h1 {
-    color: #fff;
-}
-
-.light-theme header nav ul li a {
-    color: #fff;
-}
-
-.light-theme .hero {
-    background-image: url('https://images.hdqwalls.com/download/windows-11-material-style-light-8k-d4-1600x900.jpg');
-}
-
-.light-theme section {
+body.light-theme section {
     background-color: #fff;
+    color: #111;
 }
 
-.light-theme section h2 {
-    color: #ff4500;
-}
-
-.light-theme footer {
-    background-color: #ff4500;
-    color: #fff;
-}
-
-.light-theme .feedback-form {
+body.light-theme footer {
     background-color: #fff;
-    box-shadow: none;
-}
-
-.light-theme .feedback-form h2 {
-    color: #ff4500;
-}
-
-.light-theme .feedback-form label {
     color: #111;
 }
 
-.light-theme .feedback-form input,
-.light-theme .feedback-form textarea {
-    background-color: #f2f2f2;
+body.light-theme footer nav ul li a {
     color: #111;
-}
-
-.light-theme .feedback-form button {
-    background-color: #111;
-    color: #fff;
-}
-
-.light-theme .feedback-form button:hover {
-    background-color: #333;
 }
