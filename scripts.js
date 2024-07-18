@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             content: `Email: ${email}\nDiscord Name: ${discordName}\nFeedback: ${feedbackText}`
         });
 
-        fetch('YOUR_DISCORD_WEBHOOK_URL', {
+        fetch('https://discord.com/api/webhooks/1261891121739730955/yOQ_djvOpQ4My3BK9flfJtB_sp6j7ov2QXDzWMKAzrtKuynS-DE2bbFVx45tKS7HzbsG', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
